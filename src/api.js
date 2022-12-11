@@ -5,14 +5,16 @@ const apiKey = import.meta.env.VITE_APIKEY;
 
 export const getMovieList = async () => {
     const movie = await axios.get(
-        `${baseUrl}/movie/popular?api_key=${apiKey}`
+        `${baseUrl}/movie/popular?page=1&api_key=${apiKey}`
     );
 
     return movie.data.results;
 }
 
 export const searchMovie = async (e) => {
-    const search = await axios.get(e);
+    const search = await axios.get(
+        `${baseUrl}/search/movie?query=${e}&page=1&api_key=${apiKey}`
+    );
 
-    return;
+    return search.data;
 }
