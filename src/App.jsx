@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getMovieList, searchMovie } from './api'
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -27,7 +28,7 @@ const App = () => {
                 </a>
                 <span className="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">{movie.release_date}</span>
                 <p className="mb-3 mt-3 font-normal text-gray-400">{movie.overview.substring(0, 100)+"..."}</p>
-                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-cyan-500 hover:bg-cyan-600">
                     Read more
                     <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                 </a>
@@ -46,8 +47,9 @@ const App = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen">
+      <Navbar />
       <div className="flex flex-col items-center justify-center">
-        <header className="text-4xl font-bold text-teal-300 mt-8 mb-5">ZhakaZx Movie</header>
+        <header className="text-4xl font-bold text-teal-300 mt-16 mb-5">Movies</header>
         <div className="flex items-center mb-8 w-6/12">   
           <label htmlFor="search" className="sr-only">Search</label>
           <div className="relative w-full">
@@ -65,6 +67,7 @@ const App = () => {
            <PopularMovieList />
         </div>
       </div>
+
     </div>
   )
 }
