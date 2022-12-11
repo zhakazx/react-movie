@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (     
-        <nav className="sticky top-0 z-10 bg-cyan-900">
+        <nav className="sticky top-0 z-10 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60">
             <div className="max-w-5xl mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                 <span className="text-2xl text-white font-semibold">ZhakaZx</span>

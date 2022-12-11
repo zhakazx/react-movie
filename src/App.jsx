@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getMovieList, searchMovie } from './api'
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -48,6 +49,7 @@ const App = () => {
   return (
     <div className="bg-gray-900 min-h-screen">
       <Navbar />
+      <Hero />
       <div className="flex flex-col items-center justify-center">
         <header className="text-4xl font-bold text-teal-300 mt-16 mb-5">Movies</header>
         <div className="flex items-center mb-8 w-6/12">   
